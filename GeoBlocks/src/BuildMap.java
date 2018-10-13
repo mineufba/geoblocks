@@ -80,8 +80,8 @@ public class BuildMap {
 
 		World world = new World(level, layers);
 
-		BufferedImage normalMap = ImageIO.read(new File("/home/pedro/MineUFBA/MapJava/src/img/amapa.png"));
-		BufferedImage heightMap = ImageIO.read(new File("/home/pedro/MineUFBA/MapJava/src/img/aterreno.png"));
+		BufferedImage normalMap = ImageIO.read(new File("/home/pedro/MineUFBA/MapJava/GeoBlocks/src/img/amapa.png"));
+		BufferedImage heightMap = null; //ImageIO.read(new File("/home/pedro/MineUFBA/MapJava/GeoBlocks/src/img/aterreno.png"));
 
 		System.out.println("\nWidth: " + normalMap.getWidth() + "\nHeight: " + normalMap.getHeight() + "\n");
 
@@ -90,12 +90,16 @@ public class BuildMap {
 			for (int j = 0; j < normalMap.getHeight(); j++) {
 
 				Color pixelColor = new Color(normalMap.getRGB(i, j));
-				Color heightColor = new Color(heightMap.getRGB(i, j));
-				int tileHeight = (int)(100 * heightColor.getRed()) / 255;
-				
-				for (int y = 0; y < tileHeight; y++) {
 					
-					world.setBlock(i, y + BuildMap.yBase, j, SimpleBlock.END_STONE);						
+				int tileHeight = 0;
+				if (heightMap != null) {
+					Color heightColor = new Color(heightMap.getRGB(i, j));
+					tileHeight = (int)(100 * heightColor.getRed()) / 255;
+					
+					for (int y = 0; y < tileHeight; y++) {
+						
+						world.setBlock(i, y + yBase, j, SimpleBlock.GLASS);						
+					}
 				}
 				
 				boolean foundTile = false;
