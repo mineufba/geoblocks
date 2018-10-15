@@ -25,11 +25,11 @@ public class BuildMap {
 	public static int yBase = 11;
 	private static int buildingDefaultHeight = 10;
 
+	/*
 	//Colors 
 	private static Tile[] TILE_TYPES = {
 
-		// Light Gray  238, 238, 238
-
+		
 		//Water Tile 
 		new Tile("WATER",           new Color(170, 211, 223), SimpleBlock.WATER),
 		//Orange Avenue Tile
@@ -62,9 +62,49 @@ public class BuildMap {
 		//White Areas Tile 
 		new Tile("WHITE_AREA",      new Color(255, 255, 255), SimpleBlock.WOOL)
 	};
+	
+	*/
+	
+	//Colors 2
+		private static Tile[] TILE_TYPES = {
+
+			
+			//Water Tile 
+			new Tile("WATER",           new Color(181, 208, 208), SimpleBlock.WATER),
+			//Orange Avenue Tile
+			new Tile("ORANGE_AVENUE",   new Color(253, 214, 164), SimpleBlock.SPONGE),
+			//Green Avenue Tile 
+			new Tile("GREEN_AVENUE",    new Color(254, 254, 178), SimpleBlock.MELON_BLOCK),
+
+
+			//Light Gray Areas Tile 
+			new Tile("LIGHT_GRAY_AREA", new Color(240, 240, 216), SimpleBlock.CLAY),
+			//Medium Gray Areas Tile 
+			new Tile("MEDIUM_GRAY_AREA", new Color(220, 220, 220), SimpleBlock.IRON_BLOCK),
+			//Dark Gray Areas Tile (Buildings)
+			new Tile("DARK_GRAY_AREA", new Color(188, 169, 169), SimpleBlock.BRICK_BLOCK),
+
+
+			//Light Gray Areas Tile 
+			new Tile("LIGHT_GREEN_AREA", new Color(141, 197, 108), SimpleBlock.GRASS),
+			//Dark Gray Areas Tile 
+			new Tile("DARK_GREEN_AREA",  new Color(169, 202, 174), SimpleBlock.GRASS),
+
+
+			//Dark Pink Areas Tile 
+			new Tile("DARK_PINK_AREA", new Color(236, 162, 163), SimpleBlock.REDSTONE_BLOCK),
+
+			//Black Areas Tile 
+			new Tile("BLACK_AREA",       new Color(0, 0, 0),       SimpleBlock.OBSIDIAN),
+
+
+			//White Areas Tile 
+			new Tile("WHITE_AREA",      new Color(255, 255, 255), SimpleBlock.WOOL)
+		};
 
 	public static void main(String[] args) throws IOException {
 
+		int foundBlocks = 0;
 
 		//Set all the blocks with y = -1 to BEDROCK
 		DefaultLayers layers = new DefaultLayers();
@@ -124,6 +164,7 @@ public class BuildMap {
 						}
 
 						foundTile = true;
+						foundBlocks++;
 						break;
 					}					
 				}
@@ -138,7 +179,9 @@ public class BuildMap {
 
 			}
 		}
-
+		float finalPercentage = normalMap.getWidth() * normalMap.getHeight() / foundBlocks;
+		System.out.println("Found " + finalPercentage + "% of the blocks.");
+		
 		world.save("/home/pedro/.minecraft/saves/", true);
 	}
 }
