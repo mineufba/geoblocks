@@ -1,6 +1,6 @@
 package geoblocks.main;
 
-import geoblocks.def.*;
+import geoblocks.domain.*;
 import geoblocks.util.*;
 import net.morbz.minecraft.blocks.Material;
 import net.morbz.minecraft.blocks.SimpleBlock;
@@ -36,14 +36,14 @@ public class BuildMap {
 		//Generate a flat world based on the layers
 		IGenerator generator = new FlatGenerator(layers);
 
-		Level level = new Level("Salvador_J2", generator);
+		Level level = new Level(args[3], generator);
 		level.setGameType(GameType.CREATIVE);
 		level.setSpawnPoint(0, 10, 0);
 
 		World world = new World(level, layers);
 
-		BufferedImage normalMap = ImageIO.read(new File("/home/pedro/MineUFBA/MapJava/GeoBlocks/src/img/amapa.png"));
-		BufferedImage heightMap = ImageIO.read(new File("/home/pedro/MineUFBA/MapJava/GeoBlocks/src/img/aterreno.png"));
+		BufferedImage normalMap = ImageIO.read(new File(args[0]));
+		BufferedImage heightMap = ImageIO.read(new File(args[1]));
 
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
@@ -84,7 +84,7 @@ public class BuildMap {
 		Building.makeBuilding(world, normalMap, heightMap, Tile.BUILDING.COLOR, buildingDefaultHeight, Tile.BUILDING.BLOCK);
 		Building.makeTree(world, normalMap, heightMap, Tile.TREE.COLOR, treeDeafultHeight);
 		
-		world.save("/home/pedro/.minecraft/saves/", true);
+		world.save(args[2], true);
 	}
 }
 

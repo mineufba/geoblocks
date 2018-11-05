@@ -1,4 +1,4 @@
-package geoblocks.def;
+package geoblocks.domain;
 
 import java.awt.Color;
 import net.morbz.minecraft.blocks.SimpleBlock;
@@ -15,10 +15,10 @@ public class Tile {
 	}
 	
 	public final static Tile WATER            = new Tile(new Color(181, 208, 208), SimpleBlock.WATER);
+	public final static Tile GRASS_0          = new Tile(new Color(240, 240, 216), SimpleBlock.GRASS);
 	public final static Tile TREE             = new Tile(new Color(0  , 255, 72 ), SimpleBlock.DIRT);
 	public final static Tile ORANGE_AVENUE    = new Tile(new Color(253, 214, 164), SimpleBlock.SPONGE);
 	public final static Tile GREEN_AVENUE     = new Tile(new Color(254, 254, 178), SimpleBlock.MELON_BLOCK);
-	public final static Tile LIGHT_GRAY_AREA  = new Tile(new Color(240, 240, 216), SimpleBlock.CLAY);
 	public final static Tile MEDIUM_GRAY_AREA = new Tile(new Color(220, 220, 220), SimpleBlock.IRON_BLOCK);
 	public final static Tile BUILDING         = new Tile(new Color(188, 169, 169), SimpleBlock.STONE);
 	public final static Tile LIGHT_GREEN_AREA = new Tile(new Color(141, 197, 108), SimpleBlock.GRASS);
@@ -32,10 +32,10 @@ public class Tile {
 	public static Tile[] TYPES = {
 			
 			WATER,
+			GRASS_0,
 			TREE,
 			ORANGE_AVENUE,
 			GREEN_AVENUE,
-			LIGHT_GRAY_AREA,
 			MEDIUM_GRAY_AREA,
 			BUILDING,
 			LIGHT_GREEN_AREA,

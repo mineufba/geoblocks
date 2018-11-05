@@ -1,4 +1,4 @@
-package geoblocks.def;
+package geoblocks.domain;
 
 public class Point {
 	

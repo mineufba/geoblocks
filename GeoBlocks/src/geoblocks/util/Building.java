@@ -1,6 +1,6 @@
 package geoblocks.util;
 
-import geoblocks.def.*;
+import geoblocks.domain.*;
 import geoblocks.main.*;
 
 import java.util.ArrayList;
