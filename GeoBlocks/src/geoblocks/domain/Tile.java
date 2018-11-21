@@ -20,16 +20,17 @@ public class Tile {
 	public final static Tile ORANGE_AVENUE    = new Tile(new Color(253, 214, 164), SimpleBlock.SPONGE);
 	public final static Tile GREEN_AVENUE     = new Tile(new Color(254, 254, 178), SimpleBlock.MELON_BLOCK);
 	public final static Tile MEDIUM_GRAY_AREA = new Tile(new Color(220, 220, 220), SimpleBlock.IRON_BLOCK);
-	public final static Tile BUILDING         = new Tile(new Color(188, 169, 169), SimpleBlock.STONE);
+	public final static Tile BUILDING         = new Tile(new Color(188, 169, 169), SimpleBlock.DIRT);
 	public final static Tile LIGHT_GREEN_AREA = new Tile(new Color(141, 197, 108), SimpleBlock.GRASS);
 	public final static Tile DARK_GREEN_AREA  = new Tile(new Color(169, 202, 174), SimpleBlock.GRASS);
 	public final static Tile DARK_PINK_AREA   = new Tile(new Color(236, 162, 163), SimpleBlock.REDSTONE_BLOCK);
 	public final static Tile FOOT_PATH        = new Tile(new Color(246, 132, 116), SimpleBlock.BRICK_BLOCK);
 	public final static Tile BLACK_AREA       = new Tile(new Color(0  , 0  , 0  ), SimpleBlock.OBSIDIAN);
-	public final static Tile WHITE_AREA       = new Tile(new Color(255, 255, 255), SimpleBlock.WOOL);
+	public final static Tile WHITE_AREA       = new Tile(new Color(255, 255, 255), SimpleBlock.STONE);
+	public final static Tile STREET           = new Tile(new Color( 61,  61,  61), SimpleBlock.OBSIDIAN);
 	
 	
-	public static Tile[] TYPES = {
+	public final static Tile[] TYPES = {
 			
 			WATER,
 			GRASS_0,
@@ -43,6 +44,7 @@ public class Tile {
 			DARK_PINK_AREA,
 			FOOT_PATH,
 			BLACK_AREA,
-			WHITE_AREA
+			WHITE_AREA,
+			STREET
 	};
 }

@@ -81,7 +81,7 @@ public class BuildMap {
 			}
 		}
 		
-		Building.makeBuilding(world, normalMap, heightMap, Tile.BUILDING.COLOR, buildingDefaultHeight, Tile.BUILDING.BLOCK);
+		Building.makeBuilding(world, normalMap, heightMap, Tile.BUILDING.COLOR, buildingDefaultHeight, SimpleBlock.WOOL);
 		Building.makeTree(world, normalMap, heightMap, Tile.TREE.COLOR, treeDeafultHeight);
 		
 		world.save(args[2], true);

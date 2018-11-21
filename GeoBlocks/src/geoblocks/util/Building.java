@@ -158,15 +158,18 @@ public static void makeTree (World world, BufferedImage map, BufferedImage heigh
 							
 							minP.x = point.x;
 						} 
-						else if (point.y < minP.y) {
+						
+						if (point.y < minP.y) {
 							
 							minP.y = point.y;
 						}
-						else if (point.x > maxP.x) {
+						
+						if (point.x > maxP.x) {
 							
 							maxP.x = point.x;
 						}
-						else if (point.y > maxP.y) {
+						
+						if (point.y > maxP.y) {
 							
 							maxP.y = point.y;
 						}						
